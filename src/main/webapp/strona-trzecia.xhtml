@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Trzecia strona</title>
+</h:head>
+<h:body style="background-color: cornflowerblue">
+    <h1><p:outputLabel value="#{hello.hello}"/> </h1>
+    <h:form>
+        <p:inputText id="name" value="#{hello.text}" required="true" label="Name" requiredMessage="Musi być" disabled="false"/>
+        <p:message for="name" showDetail="true"/>
+        <p:commandButton value="Powrót" action="#{hello.backToIndex}" validateClient="name" update="@form"/>
+    </h:form>
+</h:body>
+</html>

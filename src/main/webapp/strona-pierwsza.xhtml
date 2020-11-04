@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Pierwsza strona</title>
+</h:head>
+<h:body style="background-color: cornflowerblue">
+    <h1><p:outputLabel value="#{hello.hello}"/></h1>
+    <h:form>
+        <h:panelGrid columns="3">
+            <h:outputLabel value="Podaj imie "/>
+            <p:inputText id="imie" value="#{hello.imie}">
+                <p:ajax event="keyup" listener="#{hello.changeImie}" update="zmimie"/>
+            </p:inputText>
+            <h:outputText id="zmimie" value="#{hello.imie}"/>
+        </h:panelGrid>
+        <p:commandButton value="Powrót" action="#{hello.backToIndex}"/>
+    </h:form>
+</h:body>
+</html>
